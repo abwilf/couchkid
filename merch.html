@@ -91,13 +91,29 @@ layout: null
       nav {
         padding: 1rem 1.25rem;
       }
+
+      nav a {
+        padding: 0.25rem 0.5rem;
+      }
+
+      body {
+        padding-top: 4rem;
+      }
+
+      .merch-grid {
+        gap: 2rem;
+      }
+
+      .merch-item img {
+        max-width: min(300px, 70vw);
+      }
     }
   </style>
 </head>
 <body>
   <nav>
-    <a href="{{ '/story' | relative_url }}">Story</a>
     <a href="{{ '/' | relative_url }}">Home</a>
+    <a href="{{ '/story' | relative_url }}">Story</a>
   </nav>
   <div class="merch-grid">
     <a href="{{ '/order' | relative_url }}?item=tshirt" class="merch-item">
