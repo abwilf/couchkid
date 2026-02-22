@@ -12,19 +12,19 @@ document.addEventListener("DOMContentLoaded", function () {
     title.classList.add("animate-in");
 
     setTimeout(function () {
-      logo.classList.add("animate-in");
+      merch.classList.add("animate-in");
     }, 600);
 
     setTimeout(function () {
-      merch.classList.add("animate-in");
-    }, 1100);
+      logo.classList.add("animate-in");
+    }, 900);
 
     setTimeout(function () {
       navHome.classList.add("animate-in");
-    }, 1100);
+    }, 1400);
 
     setTimeout(function () {
       navStory.classList.add("animate-in");
-    }, 1200);
+    }, 1500);
   });
 });
