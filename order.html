@@ -182,8 +182,8 @@ layout: null
 </head>
 <body>
   <nav>
-    <a href="/merch">Merch</a>
-    <a href="/">Home</a>
+    <a href="{{ '/merch' | relative_url }}">Merch</a>
+    <a href="{{ '/' | relative_url }}">Home</a>
   </nav>
 
   <div class="order-container" id="order-content">
@@ -226,7 +226,7 @@ layout: null
   <div class="confirmation" id="confirmation">
     <h2>Order Received</h2>
     <p>We'll be in touch at the email you provided.</p>
-    <a href="/merch">Back to Merch</a>
+    <a href="{{ '/merch' | relative_url }}">Back to Merch</a>
   </div>
 
   <script>
@@ -241,7 +241,7 @@ layout: null
 
       var info = items[item];
       if (!info) {
-        window.location.href = "/merch";
+        window.location.href = "{{ '/merch' | relative_url }}";
         return;
       }
 

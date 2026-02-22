@@ -96,15 +96,15 @@ layout: null
 </head>
 <body>
   <nav>
-    <a href="/story">Story</a>
-    <a href="/">Home</a>
+    <a href="{{ '/story' | relative_url }}">Story</a>
+    <a href="{{ '/' | relative_url }}">Home</a>
   </nav>
   <div class="merch-grid">
-    <a href="/order?item=tshirt" class="merch-item">
+    <a href="{{ '/order' | relative_url }}?item=tshirt" class="merch-item">
       <img src="{{ '/assets/images/tshirt.png' | relative_url }}" alt="Couch Kid T-Shirt">
       <p>T-Shirt</p>
     </a>
-    <a href="/order?item=sweatshirt" class="merch-item">
+    <a href="{{ '/order' | relative_url }}?item=sweatshirt" class="merch-item">
       <img src="{{ '/assets/images/sweatshirt.png' | relative_url }}" alt="Couch Kid Sweatshirt">
       <p>Sweatshirt</p>
     </a>
