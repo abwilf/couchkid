@@ -1,0 +1,78 @@
+---
+layout: null
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Story — Couch Kid</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&family=Special+Elite&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      padding: 2rem;
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      display: flex;
+      justify-content: space-between;
+      padding: 1.5rem 2.5rem;
+      z-index: 10;
+    }
+
+    nav a {
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 0.875rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      text-decoration: none;
+      color: #111;
+      transition: color 0.2s ease;
+    }
+
+    nav a:hover {
+      color: #555;
+    }
+
+    p {
+      font-family: "Special Elite", cursive;
+      color: #995BBF;
+      font-size: clamp(1rem, 2.5vw, 1.5rem);
+      max-width: 600px;
+      line-height: 1.7;
+      text-align: center;
+    }
+
+    @media (max-width: 480px) {
+      nav {
+        padding: 1rem 1.25rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="/merch">Merch</a>
+    <a href="/">Home</a>
+  </nav>
+  <p>Every couch has a story, and every kid has a couch. Ours started in a basement somewhere between nowhere and a dream — tangled in blankets, skipping school, watching static turn to gold. We never left that couch. We just brought it with us.</p>
+</body>
+</html>

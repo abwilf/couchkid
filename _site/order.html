@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Order — Couch Kid</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Space Grotesk", sans-serif;
+      background: #fff;
+      color: #111;
+      min-height: 100vh;
+      padding: 5rem 2rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      display: flex;
+      justify-content: space-between;
+      padding: 1.5rem 2.5rem;
+      z-index: 10;
+    }
+
+    nav a {
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 0.875rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      text-decoration: none;
+      color: #111;
+      transition: color 0.2s ease;
+    }
+
+    nav a:hover {
+      color: #555;
+    }
+
+    .order-container {
+      display: flex;
+      gap: 3rem;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      justify-content: center;
+      max-width: 800px;
+    }
+
+    .order-preview {
+      text-align: center;
+    }
+
+    .order-preview img {
+      max-width: min(250px, 40vw);
+      height: auto;
+    }
+
+    .order-preview p {
+      font-size: 1.25rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-top: 1rem;
+    }
+
+    .order-form {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+      min-width: 280px;
+    }
+
+    .order-form label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+
+    .order-form input,
+    .order-form select,
+    .order-form textarea {
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 0.95rem;
+      padding: 0.6rem 0.75rem;
+      border: 2px solid #111;
+      border-radius: 0;
+      background: #fff;
+      color: #111;
+      outline: none;
+      transition: border-color 0.2s ease;
+    }
+
+    .order-form input:focus,
+    .order-form select:focus,
+    .order-form textarea:focus {
+      border-color: #555;
+    }
+
+    .order-form textarea {
+      resize: vertical;
+      min-height: 60px;
+    }
+
+    .order-form button {
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 0.875rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      padding: 0.75rem 1.5rem;
+      background: #111;
+      color: #fff;
+      border: 2px solid #111;
+      cursor: pointer;
+      transition: background 0.2s ease, color 0.2s ease;
+    }
+
+    .order-form button:hover {
+      background: #fff;
+      color: #111;
+    }
+
+    .confirmation {
+      display: none;
+      text-align: center;
+    }
+
+    .confirmation h2 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    .confirmation p {
+      font-size: 1rem;
+      color: #555;
+    }
+
+    .confirmation a {
+      display: inline-block;
+      margin-top: 1.5rem;
+      font-size: 0.875rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #111;
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .confirmation a:hover {
+      color: #555;
+    }
+
+    @media (max-width: 480px) {
+      nav {
+        padding: 1rem 1.25rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="/merch">Merch</a>
+    <a href="/">Home</a>
+  </nav>
+
+  <div class="order-container" id="order-content">
+    <div class="order-preview">
+      <img id="item-image" src="" alt="">
+      <p id="item-name"></p>
+    </div>
+    <form class="order-form" id="order-form">
+      <label>
+        Name
+        <input type="text" name="name" required>
+      </label>
+      <label>
+        Email
+        <input type="email" name="email" required>
+      </label>
+      <label>
+        Size
+        <select name="size" required>
+          <option value="" disabled selected>Select size</option>
+          <option value="S">S</option>
+          <option value="M">M</option>
+          <option value="L">L</option>
+          <option value="XL">XL</option>
+          <option value="XXL">XXL</option>
+        </select>
+      </label>
+      <label>
+        Shipping Address
+        <textarea name="address" rows="3" required></textarea>
+      </label>
+      <label>
+        Notes (optional)
+        <textarea name="notes" rows="2"></textarea>
+      </label>
+      <button type="submit">Place Order</button>
+    </form>
+  </div>
+
+  <div class="confirmation" id="confirmation">
+    <h2>Order Received</h2>
+    <p>We'll be in touch at the email you provided.</p>
+    <a href="/merch">Back to Merch</a>
+  </div>
+
+  <script>
+    (function () {
+      var params = new URLSearchParams(window.location.search);
+      var item = params.get("item");
+
+      var items = {
+        tshirt: { name: "T-Shirt", image: "/assets/images/tshirt.png" },
+        sweatshirt: { name: "Sweatshirt", image: "/assets/images/sweatshirt.png" }
+      };
+
+      var info = items[item];
+      if (!info) {
+        window.location.href = "/merch";
+        return;
+      }
+
+      document.getElementById("item-image").src = info.image;
+      document.getElementById("item-image").alt = "Couch Kid " + info.name;
+      document.getElementById("item-name").textContent = info.name;
+      document.title = "Order " + info.name + " — Couch Kid";
+
+      document.getElementById("order-form").addEventListener("submit", function (e) {
+        e.preventDefault();
+        document.getElementById("order-content").style.display = "none";
+        document.getElementById("confirmation").style.display = "block";
+      });
+    })();
+  </script>
+</body>
+</html>
